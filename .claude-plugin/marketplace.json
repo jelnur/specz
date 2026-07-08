@@ -1,0 +1,13 @@
+{
+  "name": "specz-marketplace",
+  "owner": {
+    "name": "Elnur Jabarov"
+  },
+  "plugins": [
+    {
+      "name": "specz",
+      "source": "./",
+      "description": "Spec traceability layer: capture, map, reconcile, check, audit."
+    }
+  ]
+}

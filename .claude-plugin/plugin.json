@@ -1,0 +1,8 @@
+{
+  "name": "specz",
+  "description": "Spec traceability layer: capture requirements into specz format, map code to specs, and keep them reconciled. Wraps around whichever framework does the thinking.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elnur Jabarov"
+  }
+}
