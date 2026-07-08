@@ -1,0 +1,12 @@
+# specz configuration (ADR-0002 segment registry, ADR-0012 scope)
+segments:
+  auth: authentication, sessions, identity
+  sec: security hardening, abuse protection
+  ui: user interface, presentation
+  infra: build, dependencies, environments
+ignore:
+  - "*.md"
+  - "*.specz"
+  - "specz/**"
+  - "node_modules/**"
+  - "*.lock"
