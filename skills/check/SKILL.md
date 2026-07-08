@@ -35,7 +35,7 @@ rg -oN --no-filename "\[\[(spz-[a-z0-9]+-[a-z0-9]+)\]\]" -r '$1' specz/ | sort -
 rg -oN --no-filename "^spz-[a-z0-9]+-[a-z0-9]+$" -g '*.specz' . | sort -u
 ```
 
-**C2 — Grammar and segment (error).** Every ID (referenced or in KNOWN_IDS) must match `spz-[a-z0-9]{2,5}-[a-z0-9]{2}` and its segment (the middle part) must be in SEGMENTS (ADR-0002). Additionally, any `SPECZ:` line in an in-scope file whose payload contains tokens that are not valid IDs (check the raw lines from `rg -n "SPECZ:" --glob '!specz/**'`) is an error.
+**C2 — Grammar and segment (error).** Every ID (referenced or in KNOWN_IDS) must match `spz-[a-z0-9]{2,5}-[a-z0-9]{2}` and its segment (the middle part) must be in SEGMENTS (ADR-0002). Additionally, any `SPECZ:` line in an in-scope file whose payload contains tokens other than valid IDs, comma separators, and the file's comment-close token (e.g. `-->`, `*/`) is an error (check the raw lines from `rg -n "SPECZ:" --glob '!specz/**'`).
 
 **C3 — Orphan sidecars (error).** For every `*.specz` file, the target (its own path minus the `.specz` suffix) must exist:
 ```bash
@@ -65,7 +65,7 @@ awk '
 
 **C8 — References to archived specs (error).** Any ID from C1's sources that is in ARCHIVED_IDS (archived specs' mapped code is dead by definition — ADR-0004).
 
-**C9 — Unmapped files (error).** Every IN_SCOPE file must have a file-level mapping: either a `SPECZ:` line in the file or a `<file>.specz` sidecar (ADR-0012):
+**C9 — Unmapped files (error).** Every IN_SCOPE file must have a file-level mapping: either a `SPECZ:` line in the file or a `<file>.specz` sidecar (ADR-0012). Approximation: any `SPECZ:` line satisfies C9 even if it is only an inner override — whether a true file default is present is `audit`'s concern:
 ```bash
 for f in <IN_SCOPE>; do
   rg -q "SPECZ:" "$f" || [ -f "$f.specz" ] || echo "UNMAPPED $f"

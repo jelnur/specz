@@ -7,7 +7,7 @@ description: Use for deliberate semantic review of a specz project — judges wh
 
 **Announce:** "Using specz:audit for semantic review of <scope>."
 
-`check` asks *is the structure consistent?* — audit asks *is it true?* Run `/specz:check` first; structural errors make semantic review unreliable. Read-only: findings route to other skills, audit changes nothing.
+`check` asks *is the structure consistent?* — audit asks *is it true?* Run `/specz:check` first; structural errors make semantic review unreliable. Read-only: findings route to other skills, audit changes nothing. No `specz/` directory → stop and tell the user to run `/specz:init`.
 
 ## Scope
 Confirm with the user: a segment, a folder, specific IDs, or all `done` specs. For more than ~10 specs, dispatch parallel subagents (one per segment or spec cluster), each returning findings in the report format below.

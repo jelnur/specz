@@ -14,7 +14,7 @@ Spec ID(s). If invoked as "the task is finished" with no IDs: infer them —
 ```bash
 git diff --name-only HEAD
 ```
-then collect the IDs on those files' `SPECZ:` lines and sidecars.
+(if empty because the work is already committed, use `git diff --name-only <base>..HEAD` over the task's commits) then collect the IDs on those files' `SPECZ:` lines and sidecars.
 
 ## Workflow (per spec; create a todo per step)
 

@@ -7,7 +7,7 @@ description: Use when starting work on a spec ID, or when asked what code serves
 
 **Announce:** "Using specz:context to load the slice for <id>."
 
-Read-only: change no files. Load the precise slice, not "everything that might be related".
+Read-only: change no files. Load the precise slice, not "everything that might be related". No `specz/` directory → stop and tell the user to run `/specz:init`.
 
 ## Workflow (per requested ID)
 

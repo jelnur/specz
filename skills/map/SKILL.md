@@ -42,7 +42,7 @@ description: Use while or after writing code in a specz project — maintains SP
 <!-- SPECZ: spz-docs-aa -->
 ```
 
-Always write exactly this form. A bare ID in a comment without the `SPECZ:` marker is a *mention*, not a mapping — tooling ignores it.
+Always write exactly this form. Every ID matches `spz-[a-z0-9]{2,5}-[a-z0-9]{2}` (ADR-0002). A bare ID in a comment without the `SPECZ:` marker is a *mention*, not a mapping — tooling ignores it.
 
 ## Workflow
 

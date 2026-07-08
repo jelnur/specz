@@ -25,7 +25,7 @@ Read the artifact. List discrete requirements: each must be independently verifi
 Segments are a controlled vocabulary in `specz/config.yaml` under `segments:` (ADR-0002). Pick the best fit. If none fits, propose adding one (2–5 lowercase alphanumerics + one-line description) and get the user's confirmation before editing `config.yaml`. **Never write an ID with an unregistered segment.**
 
 ### 3. Mint the ID (ADR-0002)
-Format: `spz-<segment>-<suffix>`, suffix = two characters chosen at random from `a-z0-9` (non-sequential — do not increment).
+Format: `spz-<segment>-<suffix>`, suffix = two characters chosen at random from `a-z0-9` (non-sequential — do not increment). The full ID must match `spz-[a-z0-9]{2,5}-[a-z0-9]{2}`.
 
 Verify uniqueness (IDs are never reused, including archived specs):
 ```bash
